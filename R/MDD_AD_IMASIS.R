@@ -1293,3 +1293,5 @@ Fig8B
 Fig8 <- plot_grid(Fig8A, Fig8B, ncol = 1)
 Fig8
 ggsave(filename = "figures/Figure08.pdf", plot = Fig8, height = height, width = width*2)
+
+writeLines(capture.output(sessionInfo()), "sessionInfo.txt")
