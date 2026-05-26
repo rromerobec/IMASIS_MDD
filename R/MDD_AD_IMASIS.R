@@ -913,14 +913,14 @@ Fig7A <-
   geom_segment(aes(y = unique_name, x = 0, xend = MEAN1*100), color = "slateblue4", show.legend = FALSE) +
   geom_point(aes(size = Count), color = "slateblue4") +
   labs(
-    title = "Most frequent prior medications in the year before AD initiation, by drug class",
+    title = "Most frequent initiated medications in the year before AD initiation, by drug class",
     subtitle = "Window: 365 to 31 days before cohort entry",
     x = "Proportion of cohort class (%)",
     y = NULL
   ) +
   scale_y_discrete(labels = function(x) sub(".*___", "", x)) +
   scale_size(name = "Patient\ncount (n)") +
-  theme_cowplot() +
+  theme_cowplot(font_size = 20) +
   facet_wrap(~cohortName, scale = "free")
 Fig7A
 
@@ -952,14 +952,14 @@ Fig7B <-
     geom_segment(aes(y = unique_name, x = 0, xend = MEAN1*100), color = "firebrick4", show.legend = FALSE) +
     geom_point(aes(size = Count), color = "firebrick4") +
     labs(
-      title = "Most frequent prior medications in the month before AD initiation, by drug class",
+      title = "Most frequent initiated medications in the month before AD initiation, by drug class",
       subtitle = "Window: 30 to 1 days before cohort entry",
       x = "Proportion of cohort class (%)",
       y = NULL
     ) +
     scale_y_discrete(labels = function(x) sub(".*___", "", x)) +
     scale_size(name = "Patient\ncount (n)") +
-    theme_cowplot() +
+    theme_cowplot(font_size = 20) +
     facet_wrap(~cohortName, scale = "free")
 
 Fig7 <- plot_grid(Fig7A, Fig7B, ncol = 1, labels = "AUTO")
