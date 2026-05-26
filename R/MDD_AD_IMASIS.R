@@ -421,7 +421,7 @@ Fig3A <-
   #geom_text(aes(y = MEAN1*100, label = Count), vjust = -1, size = 4, color = "slateblue1") +
   coord_flip() +
   scale_size(name = "Patient\ncount (n)") +
-  theme_cowplot()
+  theme_cowplot(font_size = 20) + theme(plot.title.position = "plot")
 Fig3A  
 
 Fig3B <-   
@@ -438,7 +438,7 @@ Fig3B <-
   geom_segment(aes(y=0, yend = MEAN1*100), color = "slateblue1") +
   geom_point(aes(size = Count), shape = 18, color = "slateblue1") + 
   labs(
-    title = "Most frequent prior medications in the year before MDD diagnosis",
+    title = "Most frequent initiated medications in the year before MDD diagnosis",
     subtitle = "Window: 365 to 31 days before cohort entry, n = 6320",
     x = NULL,
     y = "Proportion of cohort (%)"
@@ -446,7 +446,7 @@ Fig3B <-
   #geom_text(aes(y = MEAN1*100, label = Count), vjust = -1, size = 4, color = "slateblue1") +
   coord_flip() +
   scale_size(name = "Patient\ncount (n)") +
-  theme_cowplot()
+  theme_cowplot(font_size = 20) + theme(plot.title.position = "plot")
 Fig3B
 
 
@@ -474,7 +474,7 @@ Fig3C <-
   #geom_text(aes(y = MEAN1*100, label = Count), vjust = -1, size = 4, color = "darkorchid3") +
   coord_flip() +
   scale_size(name = "Patient\ncount (n)") +
-  theme_cowplot()
+  theme_cowplot(font_size = 20) + theme(plot.title.position = "plot")
 Fig3C
 
 Fig3D <- 
@@ -491,7 +491,7 @@ Fig3D <-
   geom_segment(aes(y=0, yend = MEAN1*100), color = "firebrick") +
   geom_point(aes(size = Count), shape = 18, color = "firebrick") + 
   labs(
-    title = "Most frequent medications in the month before MDD diagnosis",
+    title = "Most frequent initiated medications in the month before MDD diagnosis",
     subtitle = "Window: 30 days to 1 day before index, n = 6320",
     x = NULL,
     y = "Proportion of cohort (%)",
@@ -499,11 +499,11 @@ Fig3D <-
   #geom_text(aes(y = MEAN1*100, label = Count), vjust = -1, size = 4, color = "darkorchid3") +
   coord_flip() +
   scale_size(name = "Patient\ncount (n)") +
-  theme_cowplot()
+  theme_cowplot(font_size = 20) + theme(plot.title.position = "plot")
 Fig3D
 
 Fig3 <- plot_grid(Fig3A, Fig3B, Fig3C, Fig3D, labels = "AUTO", ncol = 2)
-ggsave("figures/Figure03.pdf", plot = Fig3, height = height, width = width*2.5)
+ggsave("figures/Figure03.pdf", plot = Fig3, height = 1.5*height, width = width*2.5)
 
 
 # 3. Epidemiology of diagnosed MDD ----
